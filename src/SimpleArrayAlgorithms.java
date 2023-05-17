@@ -12,6 +12,16 @@ public class SimpleArrayAlgorithms {
         return max;
     }
 
+    public static double findSum(double[] a) {
+        double sum = 0.0;
+
+        for (double i : a) {
+            sum += i;
+        }
+
+        return sum;
+    }
+
     public static void main(String[] args) {
         double[] a = new double[5];
 
@@ -22,6 +32,7 @@ public class SimpleArrayAlgorithms {
         a[4] = 10.5;
 
         System.out.println(findMax(a));
+        System.out.println(findSum(a));
 
     }
 }
