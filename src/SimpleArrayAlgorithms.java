@@ -33,10 +33,10 @@ public class SimpleArrayAlgorithms {
         double[] a = new double[5];
 
         a[0] = 5.0;
-        a[1] = 4.4;
-        a[2] = 9.8;
-        a[3] = 9.6;
-        a[4] = 10.5;
+        a[1] = 5.4;
+        a[2] = 5.3;
+        a[3] = 5.2;
+        a[4] = 5.1;
 
         System.out.println(findMax(a));
         System.out.println(findSum(a));
