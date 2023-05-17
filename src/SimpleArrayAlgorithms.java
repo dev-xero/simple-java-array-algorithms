@@ -29,18 +29,37 @@ public class SimpleArrayAlgorithms {
         return sum / length;
     }
 
+    // This method works most effectively on an even-sized array
+    public static double[] reverseArray(double[] a) {
+        double[] reversedArray = new double[a.length];
+        int size = a.length;
+
+        for (int i = 0; i < size / 2; i++) {
+            double temp = a[i];
+            reversedArray[i] = a[size - 1 - i];
+            reversedArray[size - 1 - i] = temp;
+        }
+
+        return reversedArray;
+    }
+
     public static void main(String[] args) {
-        double[] a = new double[5];
+        double[] a = new double[4];
 
         a[0] = 5.0;
         a[1] = 5.4;
         a[2] = 5.3;
         a[3] = 5.2;
-        a[4] = 5.1;
 
         System.out.println(findMax(a));
         System.out.println(findSum(a));
         System.out.println(findAverage(a));
 
+        System.out.println();
+        double[] aReversedArray = reverseArray(a);
+
+        for (double i : aReversedArray) {
+            System.out.println(i);
+        }
     }
 }
