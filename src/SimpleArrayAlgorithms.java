@@ -22,6 +22,13 @@ public class SimpleArrayAlgorithms {
         return sum;
     }
 
+    public static double findAverage(double[] a) {
+        double sum = findSum(a);
+        int length = a.length;
+
+        return sum / length;
+    }
+
     public static void main(String[] args) {
         double[] a = new double[5];
 
@@ -33,6 +40,7 @@ public class SimpleArrayAlgorithms {
 
         System.out.println(findMax(a));
         System.out.println(findSum(a));
+        System.out.println(findAverage(a));
 
     }
 }
