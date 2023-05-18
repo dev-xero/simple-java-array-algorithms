@@ -59,6 +59,16 @@ public class SimpleArrayAlgorithms {
         return dotProductMatrix;
     }
 
+    public static double findHarmonicSum(double[] a) {
+        double sum = 0.0;
+
+        for (double i : a) {
+            sum += 1.0 / i;
+        }
+
+        return sum;
+    }
+
     public static void main(String[] args) {
         double[] a = new double[4];
         double[][] matrix = new double[2][2]; // a 2x2 matrix
@@ -92,5 +102,8 @@ public class SimpleArrayAlgorithms {
                 System.out.println(doubles[j]);
             }
         }
+
+        System.out.println();
+        System.out.println(findHarmonicSum(a));
     }
 }
