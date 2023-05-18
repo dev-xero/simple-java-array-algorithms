@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SimpleArrayAlgorithms {
 
     public static double findMax(double[] a) {
@@ -71,6 +73,8 @@ public class SimpleArrayAlgorithms {
 
     // recursive implementation of binary search
     public static int rank(int key, int[] array) {
+        // works on sorted arrays
+        Arrays.sort(array);
         return rank(key, array, 0, array.length - 1);
     }
 
