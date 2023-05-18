@@ -69,9 +69,37 @@ public class SimpleArrayAlgorithms {
         return sum;
     }
 
+    // recursive implementation of binary search
+    public static int rank(int key, int[] array) {
+        return rank(key, array, 0, array.length - 1);
+    }
+
+    public static int rank(int key, int[] array, int lo, int hi) {
+        if (lo > hi) {
+            return -1;
+        }
+
+        int mid = lo + (hi - lo) / 2;
+
+        if (key < array[mid]) {
+            return rank(key, array, lo, mid - 1);
+        } else if (key > array[mid]) {
+            return rank(key, array, mid + 1, hi);
+        } else {
+            return mid;
+        }
+    }
+
     public static void main(String[] args) {
         double[] a = new double[4];
         double[][] matrix = new double[2][2]; // a 2x2 matrix
+        int[] sortedIntArray = new int[5];
+
+        sortedIntArray[0] = 32;
+        sortedIntArray[1] = 48;
+        sortedIntArray[2] = 60;
+        sortedIntArray[3] = 65;
+        sortedIntArray[4] = 74;
 
         a[0] = 5.0;
         a[1] = 5.4;
@@ -105,5 +133,9 @@ public class SimpleArrayAlgorithms {
 
         System.out.println();
         System.out.println(findHarmonicSum(a));
+
+        System.out.println();
+        System.out.println(rank(64, sortedIntArray));
+        System.out.println(rank(65, sortedIntArray));
     }
 }
